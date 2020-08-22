@@ -94,6 +94,8 @@
   {% endif %}
 
   <textarea class="col-md-12" id="document" name="document"{% if settings.read_only %} readonly="readonly"{% endif %}>{{ docString }}</textarea>
+  <textarea id="document_bson" style="display: none;" readonly="readonly">{{ docString }}</textarea>
+  <textarea id="document_json" style="display: none;" readonly="readonly">{{ docJsonString }}</textarea>
   <br />
 
   <div>
@@ -114,6 +116,10 @@
         Back
       </button>
     {% endif %}
+    <button onclick="return onJSONClick(this)" class="btn btn-info btn-large">
+      JSON
+    </button>
+
   </div>
 </form>
 
